@@ -1,0 +1,14 @@
+List of future changes
+----------
+
+Add examples to the folder (currently there are examples throughout the comments/readme)
+
+Add optional error output mode as a standard input to each class
+
+Standardised error output method
+
+MP3 decoder
+
+Arff from segmentation converter
+
+

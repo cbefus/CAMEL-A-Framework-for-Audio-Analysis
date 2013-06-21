@@ -1,0 +1,63 @@
+# Settings File
+
+#example usage for in code: settingsFile.read<double>("DB_SCALE_OFFSET", 96.0)
+
+#PCM Settings
+PCM_SAMPLE_RATE = 44100.0
+PCM_HEADER_LINES = 5
+
+#Settings for segmenter class
+
+#General Settings
+WINDOW_SIZE = 1024
+
+#Static by Size Segmentation
+SEGMENT_SIZE = 10240
+
+#Top-k Farthest Neighbors
+TKFN_FRAME_SIZE = 1024
+TKFN_HUERISTIC_PERCENT = 0.01
+
+#Top-K largest Matrix Scores
+TKLM_KERNEL_SIZE = 4 #number of frames to cover with kernel (86~= 2 seconds), should be even, heavily affects runtime
+TKLM_HUERISTIC_PERCENT = 0.01
+TKLM_DOMAIN = 1 #1=Time 2=FFT (with settings below) 3=Peak (with settings below) 4=Harmonic(...)
+
+#greedy merge
+GM_FRAME_SIZE = 1024
+
+#Settings for featureExtract class
+#  General Settings
+PI = 3.1415926535897931
+SMALL_NUMBER_LIMIT = 2e-42
+LARGE_NUMBER_LIMIT = 2e42
+LOG_LIMIT_DB = -96.0
+DB_SCALE_OFFSET = 96.0
+
+#  FFT SPECTRUM
+INCLUDE_DC_COMPONENT = false
+SPECTRUM_TYPE = 4 #1= Log Magnitude, 2 = Power, 3 = Log Power, 4 = Magnitude
+SPECTRUM_WINDOW = 8 #1 = Hann 2 = Hamming 3 = Triangular 4 = Bartlett 5 = Bartlett-Hann 6 = Blackman 7 = Blackman-Harris 8 = rectangular
+
+#  Spectral Rolloff Settings
+SPECTRAL_ROLLOFF_THRESH = 0.95 #.95 Bee Suan Ong 2006, .85 jAudio, 0.9 in Matthieu Cord Machine Learning Techniques for Multimedia(2008)
+	
+#  MFCC Settings
+NUM_CEPSTRA = 13
+NUM_MEL_FILTERS = 23
+LOWER_FILTER_FREQ = 133.3334
+UPPER_FILTER_FREQ = 6855.4976
+
+#  Bark Scale Settings
+NUM_BARK_BANDS = 26
+
+#  Peak Spectrum Settings
+PEAK_THRESHOLD_PERCENT = 10 #libxtract uses 10 for failsafe f0
+
+
+
+
+
+
+
+
